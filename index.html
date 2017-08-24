@@ -34,7 +34,10 @@
           $('#messages').append($('<li>').text(msg));
           window.scrollTo(0, document.body.scrollHeight);
         });
-        $('#messages').innerHeight($(window).innerHeight()-40);
+        function resizeIt() {$('#messages').innerHeight($(window).innerHeight()-40);)
+        $(window).on('resize orientationchange', function() {
+          resizeIt();
+        });
       });
     </script>
   </body>
